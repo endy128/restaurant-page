@@ -15,6 +15,7 @@ const renderNav = (content) => {
     const header = document.createElement('div');
     const headerText = document.createElement('h1');
 
+    homeText.classList.add('selected');
 
     header.className = 'header';
     nav.className = 'nav';
