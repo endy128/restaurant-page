@@ -1,4 +1,4 @@
-const renderMenu = () => {
+const renderContact = () => {
 
 
 const main = document.querySelector('.main');  
@@ -15,9 +15,9 @@ item1.className = 'item';
 item2.className = 'item';
 item3.className = 'item';
 
-item1Text.textContent = 'Breakfast Menu';
-item2Text.textContent = 'Lunch Menu';
-item3Text.textContent = 'Dinner Menu';
+item1Text.textContent = 'Phone';
+item2Text.textContent = 'Map';
+item3Text.textContent = 'Address';
 
 item1.appendChild(item1Text);
 item2.appendChild(item2Text);
@@ -29,4 +29,4 @@ main.appendChild(item3);
 
 }
 
-export { renderMenu };
+export { renderContact };
