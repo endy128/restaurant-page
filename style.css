@@ -90,15 +90,17 @@ body {
     background-color: aqua;
 }
 
-.home,
-.menu,
-.contact {
+.nav-button {
     cursor: pointer;
 }
 
 .item {
     margin: 66px;
     border: 1px solid black;
+}
+
+.selected {
+    border-bottom: 2px solid black;
 }
 
 
