@@ -1,30 +1,50 @@
 import { renderHome } from "./home";
 import { renderNav } from "./nav";
 
-
- // get cache of the #content div
-const content = document.querySelector('#content');
-
-// render the nav bar (and header)
-renderNav(content);
-
-// main div of the page
-const main = document.createElement('div');
-
-const footer = document.createElement('div');
-const footerText = document.createElement('span');
-
-main.className = 'main';
-footer.className = 'footer';
-
-footerText.innerHTML = '<a href="http://github.com/endy128">Deisgn by endy128</a>';
-
-content.appendChild(main);
-
-footer.appendChild(footerText);
-content.appendChild(footer);
-
-// render the main page first by default
-renderHome();
+const createDiv = (name, innerHTML) => {
+    const div = document.createElement('div');
+    div.classList.add(name);
+    if (innerHTML) {
+        const span = document.createElement('span');
+        span.innerHTML = innerHTML;
+        div.appendChild(span);
+    }
+    return div;
+}
 
 
+
+const initialRender = (() => {
+    // get cache of the #content div
+   const content = document.querySelector('#content');
+   
+   // render the nav bar (and header)
+   renderNav(content);
+   
+   content.appendChild(createDiv('main'));
+   
+   content.appendChild(createDiv('footer', '<a href="http://github.com/endy128">Deisgn by endy128</a>'));
+   
+   // render the main page first by default
+   renderHome();
+   
+})();
+
+
+// const initialRender = () => {
+//  // get cache of the #content div
+// const content = document.querySelector('#content');
+
+// // render the nav bar (and header)
+// renderNav(content);
+
+// content.appendChild(createDiv('main'));
+
+// content.appendChild(createDiv('footer', '<a href="http://github.com/endy128">Deisgn by endy128</a>'));
+
+// // render the main page first by default
+// renderHome();
+
+// };
+
+// initialRender();

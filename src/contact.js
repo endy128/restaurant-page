@@ -17,28 +17,7 @@ const renderContact = () => {
             `Map location`
         )
     );
-
-
-
 return main;
 }
-
-
-// const createItem = (header, paragraph) => {
-//     const item = document.createElement('div');
-//     item.classList.add('item');
-
-//     const myHeader = document.createElement('h2');
-//     myHeader.textContent = header;
-
-//     const myParagraph = document.createElement('p');
-//     myParagraph.innerHTML = paragraph;
-
-//     item.appendChild(myHeader);
-//     item.appendChild(myParagraph);
-
-//     return item;
-// }
-
 
 export { renderContact };
