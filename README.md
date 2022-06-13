@@ -6,3 +6,4 @@ An example restaurant page
 - Only very simple HTML file to begin with, render everything with functions
 
 
+https://endy128.github.io/restaurant-page/
