@@ -1,62 +1,56 @@
 import { changePage } from "./changePage";
 
-const renderNav = (content) => {
-    
-    // const content = document.querySelector('#content');
-
-    const nav = document.createElement('div');
-    const home = document.createElement('div');
-    const menu = document.createElement('div');
-    const contact = document.createElement('div');
-    const homeText = document.createElement('h2');
-    const menuText = document.createElement('h2');
-    const contactText = document.createElement('h2');
-
+const createHeader = () => {
     const header = document.createElement('div');
     const headerText = document.createElement('h1');
-
-    homeText.classList.add('selected');
-
-    header.className = 'header';
-    nav.className = 'nav';
-
-    home.className = 'nav-button';
-    menu.className = 'nav-button';
-    contact.className = 'nav-button';
-
-    // give each h2 text an extra data-* so we can use it to render different pages
-    homeText.dataset.page = 0;
-    menuText.dataset.page = 1;
-    contactText.dataset.page = 2;
-
-
-    headerText.textContent = 'My Restaurant';
-    homeText.textContent = 'Home';
-    menuText.textContent = 'Menu';
-    contactText.textContent = 'Contact';
-
+    
+    header.classList.add('header');
+    
+    headerText.textContent = 'Breakfast Restaurant';
     header.appendChild(headerText);
-    home.appendChild(homeText);
-    menu.appendChild(menuText);
-    contact.appendChild(contactText);
 
-    nav.appendChild(home);
-    nav.appendChild(menu);
-    nav.appendChild(contact);
+    return header;
+}
 
-    content.appendChild(header);
-    content.appendChild(nav);
-
-    const addEventListeners = () => {
-        const buttons = Array.from(document.querySelectorAll('.nav-button'));
-        buttons.forEach(button => button.addEventListener('click', changePage));
-            
-    };
+const createNavItem = (name, pageNum) => {
+    const button = document.createElement('div');
+    const h2 = document.createElement('h2');
+    h2.textContent = name;
+    h2.dataset.page = pageNum;
+    button.classList.add('nav-button');
     
-    
-    addEventListeners();
+    // as the home page is first to render, set it to selected for css bottom border
+    if (name === 'Home') h2.classList.add('selected');
 
+    button.appendChild(h2);
+
+    return button;
 
 }
+
+const createNavBar = () => {
+    const nav = document.createElement('div');
+    nav.classList.add('nav');
+
+    nav.appendChild(createNavItem('Home', 0));
+    nav.appendChild(createNavItem('Menu', 1));
+    nav.appendChild(createNavItem('Contact', 2));
+
+    return nav;
+
+}
+
+const renderNav = (content) => {
+    content.appendChild(createHeader());
+    content.appendChild(createNavBar());
+
+    addEventListeners();
+}
+
+const addEventListeners = () => {
+    const buttons = Array.from(document.querySelectorAll('.nav-button'));
+    buttons.forEach(button => button.addEventListener('click', changePage));
+        
+};
     
 export { renderNav };

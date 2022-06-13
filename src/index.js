@@ -17,7 +17,7 @@ const footerText = document.createElement('span');
 main.className = 'main';
 footer.className = 'footer';
 
-footerText.textContent = 'Design by Neil Douglas';
+footerText.innerHTML = '<a href="http://github.com/endy128">Deisgn by endy128</a>';
 
 content.appendChild(main);
 
