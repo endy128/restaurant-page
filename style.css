@@ -95,13 +95,19 @@ body {
 }
 
 .item {
-    margin: 66px;
+    margin: 33px 66px;
     /* border: 1px solid black; */
     background-color: var(--light-color);
+    padding: 24px;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .selected {
     border-bottom: 2px solid var(--selected);
 }
 
-
+.item h1,
+.item h2 {
+    margin-bottom: 12px;
+}
