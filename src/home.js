@@ -44,4 +44,4 @@ const createItem = (header, paragraph) => {
 }
 
 
-export { renderHome };
+export { renderHome, createItem };

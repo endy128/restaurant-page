@@ -1,3 +1,6 @@
+import { createItem } from "./home";
+
+
 const renderContact = () => {
     const main = document.querySelector('.main'); 
 
@@ -21,21 +24,21 @@ return main;
 }
 
 
-const createItem = (header, paragraph) => {
-    const item = document.createElement('div');
-    item.classList.add('item');
+// const createItem = (header, paragraph) => {
+//     const item = document.createElement('div');
+//     item.classList.add('item');
 
-    const myHeader = document.createElement('h2');
-    myHeader.textContent = header;
+//     const myHeader = document.createElement('h2');
+//     myHeader.textContent = header;
 
-    const myParagraph = document.createElement('p');
-    myParagraph.innerHTML = paragraph;
+//     const myParagraph = document.createElement('p');
+//     myParagraph.innerHTML = paragraph;
 
-    item.appendChild(myHeader);
-    item.appendChild(myParagraph);
+//     item.appendChild(myHeader);
+//     item.appendChild(myParagraph);
 
-    return item;
-}
+//     return item;
+// }
 
 
 export { renderContact };
